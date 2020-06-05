@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "553822213544",
+    "firebase_url": "https://field-reporting-fa205.firebaseio.com",
+    "project_id": "field-reporting-fa205",
+    "storage_bucket": "field-reporting-fa205.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553822213544:android:f305517be41c3b3b0cf99d",
+        "android_client_info": {
+          "package_name": "com.example.fieldreporter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553822213544-7bck9ornts6giebmqnkak31f7v1f3hh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOu_q1KjX3S_XNyu_XnkpMAqh0ho4-Xmo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553822213544-7bck9ornts6giebmqnkak31f7v1f3hh8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
