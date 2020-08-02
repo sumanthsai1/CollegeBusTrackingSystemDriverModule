@@ -1,10 +1,11 @@
-package com.example.test_covid;
+package com.example.cbts1;
 
 public class profilee {
 
     private String username;
     private String email;
     private String status;
+    private String Post;
 
     public String getStatus() {
         return status;
@@ -30,6 +31,16 @@ public class profilee {
         this.username = username;
     }
 
+
+
     public profilee() {
+    }
+
+    public String getPost() {
+        return Post;
+    }
+
+    public void setPost(String post) {
+        this.Post = post;
     }
 }

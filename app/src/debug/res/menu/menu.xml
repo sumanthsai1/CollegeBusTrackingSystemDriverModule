@@ -2,10 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <item
-        android:id="@+id/profile"
+        android:id="@+id/Profile"
         android:title="Profile"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/Support"
+        android:title="Support"
         app:showAsAction="never"/>
     <item
         android:id="@+id/Contact"
@@ -14,10 +17,6 @@
     <item
         android:id="@+id/aboutus"
         android:title="About This App"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/logout"
-        android:title="Logout"
         app:showAsAction="never"/>
 
 </menu>

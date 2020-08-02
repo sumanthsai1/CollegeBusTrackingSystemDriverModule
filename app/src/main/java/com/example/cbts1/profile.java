@@ -1,13 +1,12 @@
-package com.example.test_covid;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.cbts1;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -19,12 +18,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 public class profile extends AppCompatActivity {
-    private TextView pname;
+    private TextView pname,post;
     private TextView pemail;
     private String stat;
     private TextView statoff,staton;
     FirebaseDatabase firebaseDatabase;
-    private Button Reset;
     FirebaseAuth auth;
     private DatabaseReference databaseReference;
 
@@ -55,6 +53,7 @@ public class profile extends AppCompatActivity {
         pemail = findViewById(R.id.profileEmail);
         staton=findViewById(R.id.staton);
         statoff=findViewById(R.id.statoff);
+        post=findViewById(R.id.postid);
         auth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Users").child(auth.getUid());
@@ -66,6 +65,7 @@ public class profile extends AppCompatActivity {
                 assert profilee != null;
                 pname.setText(profilee.getUsername());
                 pemail.setText(profilee.getEmail());
+                post.setText(profilee.getPost());
                 stat=profilee.getStatus();
                 if(stat == "online")
                 {

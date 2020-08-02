@@ -1,4 +1,4 @@
-package com.example.cropmanagement.HarvestingReservation;
+package com.example.cbts1.QueryReservation;
 
 import android.app.ProgressDialog;
 import android.content.Context;

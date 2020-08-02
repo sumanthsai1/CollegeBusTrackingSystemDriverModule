@@ -1,4 +1,4 @@
-package com.example.cropmanagement.HarvestingReservation;
+package com.example.cbts1.QueryReservation;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -11,15 +11,14 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.cropmanagement.R;
+import com.example.cbts1.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -44,7 +43,7 @@ public class OnlineReservation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_online_doctor);
+        setContentView(R.layout.activity_query_reservation);
 
         patient_name = findViewById(R.id.username);
         email = findViewById(R.id.email);

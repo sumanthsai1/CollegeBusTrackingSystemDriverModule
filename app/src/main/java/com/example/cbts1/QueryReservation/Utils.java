@@ -1,4 +1,4 @@
-package com.example.cropmanagement.HarvestingReservation;
+package com.example.cbts1.QueryReservation;
 
 public class Utils {
     //This is your from email

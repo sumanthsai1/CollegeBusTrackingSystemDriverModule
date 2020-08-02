@@ -1,4 +1,4 @@
-package com.example.test_covid.Model;
+package com.example.cbts1;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
