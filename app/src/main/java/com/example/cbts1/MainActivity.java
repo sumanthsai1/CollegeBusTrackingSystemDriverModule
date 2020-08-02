@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,7 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
-    ImageView menu;
+    ImageView menu,img1,img2;
+    TextView tv1,tv2;
     String poststr;
     String g1="driver";
     String g2="passenger";
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         menu=findViewById(R.id.menu);
+        img1=findViewById(R.id.imageView1);
+        img2=findViewById(R.id.imageView2);
+        tv1=findViewById(R.id.textView);
+        tv2=findViewById(R.id.textView4);
         auth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Users").child(auth.getUid());
@@ -44,7 +50,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 assert profilee != null;
                 poststr=profilee.getPost();
 
-
+                if(poststr.toLowerCase().trim().equals(g1.toLowerCase().trim())){
+                    img2.setVisibility(View.GONE);
+                    tv2.setVisibility(View.GONE);
+                }
+                else if(poststr.toLowerCase().trim().equals(g2.toLowerCase().trim())){
+                    img1.setVisibility(View.GONE);
+                    tv1.setVisibility(View.GONE);
+                }
             }
 
             @Override
@@ -64,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
             }
         });
+
     }
     public void postlocation(View view) {
         if(poststr.toLowerCase().trim().equals(g1.toLowerCase().trim())){

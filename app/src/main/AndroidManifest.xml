@@ -29,6 +29,7 @@
             android:label="@string/title_activity_maps1"></activity>
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".profile"/>
+        <activity android:name=".RegisterActivity"/>
         <activity android:name=".QueryReservation.OnlineReservation"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -37,7 +38,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".MapsActivity"

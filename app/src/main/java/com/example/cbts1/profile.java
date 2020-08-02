@@ -3,6 +3,7 @@ package com.example.cbts1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,7 @@ public class profile extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     FirebaseAuth auth;
     private DatabaseReference databaseReference;
+    Button bt1;
 
     public void status(String status){
         databaseReference = firebaseDatabase.getReference("Users").child(auth.getUid());
@@ -55,8 +57,11 @@ public class profile extends AppCompatActivity {
         statoff=findViewById(R.id.statoff);
         post=findViewById(R.id.postid);
         auth=FirebaseAuth.getInstance();
+        bt1=findViewById(R.id.button);
         firebaseDatabase=FirebaseDatabase.getInstance();
+
         databaseReference = firebaseDatabase.getReference("Users").child(auth.getUid());
+
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -80,10 +85,19 @@ public class profile extends AppCompatActivity {
                     staton.setVisibility(View.GONE);
 
                 }
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        bt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(profile.this, LoginActivity.class));
 
             }
         });

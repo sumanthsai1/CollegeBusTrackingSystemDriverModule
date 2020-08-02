@@ -67,7 +67,6 @@
             android:gravity="center"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:inputType="textPassword"
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
             android:hint="Driver or Passenger"/>
