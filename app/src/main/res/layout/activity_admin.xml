@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".AdminActivity">
 
 
 
@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Create a new account"
+            android:text="Create a new Driver account"
             android:textSize="25sp"
             android:textColor="#000"
             android:textStyle="bold"/>
@@ -69,7 +69,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
-            android:hint="Request for Driver or Passenger to register"/>
+            android:hint="Driver Only"/>
 
         <Button
             android:layout_width="wrap_content"

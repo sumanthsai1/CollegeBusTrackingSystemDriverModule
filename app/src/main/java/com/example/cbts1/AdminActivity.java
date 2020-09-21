@@ -21,11 +21,11 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.HashMap;
 
-public class RegisterActivity extends AppCompatActivity {
+public class AdminActivity extends AppCompatActivity {
 
     MaterialEditText username, email, password,post;
     Button btn_register;
-
+    String poststr1="driver1";
     FirebaseAuth auth;
     DatabaseReference reference;
 
@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_admin);
 
 
         username = findViewById(R.id.username);
@@ -53,9 +53,12 @@ public class RegisterActivity extends AppCompatActivity {
                 String txt_post=post.getText().toString();
 
                 if (TextUtils.isEmpty(txt_username) || TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password) || TextUtils.isEmpty(txt_post)){
-                    Toast.makeText(RegisterActivity.this, "All fileds are required", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminActivity.this, "All fileds are required", Toast.LENGTH_SHORT).show();
                 } else if (txt_password.length() < 6 ){
-                    Toast.makeText(RegisterActivity.this, "password must be at least 6 characters", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminActivity.this, "password must be at least 6 characters", Toast.LENGTH_SHORT).show();
+                } else if(!txt_post.toLowerCase().trim().equals(poststr1.toLowerCase().trim())){
+                    Toast.makeText(AdminActivity.this, "Post Should be driver1", Toast.LENGTH_SHORT).show();
+
                 }
                 else {
                     register(txt_username, txt_email, txt_password,txt_post);
@@ -84,13 +87,13 @@ public class RegisterActivity extends AppCompatActivity {
                             hashMap.put("imageURL", "default");
                             hashMap.put("status", "status");
                             hashMap.put("Password", password);
-                            hashMap.put("Post",post);
+                            hashMap.put("Post","Driver1");
 
                             reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
-                                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                        Intent intent = new Intent(AdminActivity.this, MainActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
                                         finish();
@@ -98,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 }
                             });
                         } else {
-                            Toast.makeText(RegisterActivity.this, "You can't register with this email or password", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AdminActivity.this, "You can't register with this email or password", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

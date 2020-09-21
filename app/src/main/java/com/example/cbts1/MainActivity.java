@@ -21,11 +21,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
-    ImageView menu,img1,img2;
-    TextView tv1,tv2;
-    String poststr;
-    String g1="driver";
+    ImageView menu,img1,img2,img3;
+    TextView tv1,tv2,tv3;
+    String poststr="null";
+    String g1="driver1";
     String g2="passenger";
+    String g3="admin";
     FirebaseDatabase firebaseDatabase;
     FirebaseAuth auth;
     private DatabaseReference databaseReference;
@@ -38,8 +39,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         menu=findViewById(R.id.menu);
         img1=findViewById(R.id.imageView1);
         img2=findViewById(R.id.imageView2);
+        img3=findViewById(R.id.imageView3);
         tv1=findViewById(R.id.textView);
         tv2=findViewById(R.id.textView4);
+        tv3=findViewById(R.id.textView5);
         auth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Users").child(auth.getUid());
@@ -49,15 +52,31 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 profilee profilee = snapshot.getValue(profilee.class);
                 assert profilee != null;
                 poststr=profilee.getPost();
-
                 if(poststr.toLowerCase().trim().equals(g1.toLowerCase().trim())){
                     img2.setVisibility(View.GONE);
                     tv2.setVisibility(View.GONE);
+                    img3.setVisibility(View.GONE);
+                    tv3.setVisibility(View.GONE);
+
                 }
                 else if(poststr.toLowerCase().trim().equals(g2.toLowerCase().trim())){
                     img1.setVisibility(View.GONE);
                     tv1.setVisibility(View.GONE);
+                    img3.setVisibility(View.GONE);
+                    tv3.setVisibility(View.GONE);
+
                 }
+                else if(poststr.toLowerCase().trim().equals(g3.toLowerCase().trim())){
+                    img1.setVisibility(View.VISIBLE);
+                    tv1.setVisibility(View.VISIBLE);
+                    img2.setVisibility(View.VISIBLE);
+                    tv2.setVisibility(View.VISIBLE);
+                    img3.setVisibility(View.VISIBLE);
+                    tv3.setVisibility(View.VISIBLE);
+
+
+                }
+
             }
 
             @Override
@@ -97,6 +116,11 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         }
     }
+    public void administrator(View view){
+        startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+
+    }
+
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId())
         {
@@ -127,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         About_dialog about_dialog=new About_dialog();
         about_dialog.show(getSupportFragmentManager(),"example dialog");
     }
+
 
 
 

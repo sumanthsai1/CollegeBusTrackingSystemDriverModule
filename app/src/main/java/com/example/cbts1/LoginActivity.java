@@ -65,10 +65,6 @@ public class LoginActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
                     Toast.makeText(LoginActivity.this, "All fileds are required", Toast.LENGTH_SHORT).show();
                 }
-                else if (txt_email.equals("Codestar") || txt_password.equals("codestar"))
-                {
-                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
-                }
                 else
                 {
 

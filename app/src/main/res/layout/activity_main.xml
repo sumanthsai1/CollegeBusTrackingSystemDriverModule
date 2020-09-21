@@ -1,67 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
     tools:context="com.example.cbts1.MainActivity">
-
-    <include
-        android:id="@+id/imgv1"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        layout="@layout/drawer_toolbar"/>
+        android:layout_height="match_parent"
+        >
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="273dp"
-        android:src="@drawable/dri1"
-        android:layout_height="172dp"
-        android:layout_alignBottom="@id/imgv1"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="65dp"
-        android:onClick="postlocation"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"/>
+        <include
+            android:id="@+id/imgv1"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            layout="@layout/drawer_toolbar"/>
+    
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="273dp"
+            android:src="@drawable/dri1"
+            android:layout_height="172dp"
+            android:layout_alignBottom="@id/imgv1"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="65dp"
+            android:onClick="postlocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"/>
+    
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="273dp"
+            android:layout_height="172dp"
+            android:layout_alignBottom="@id/imageView1"
+            android:layout_marginStart="69dp"
+            android:src="@drawable/pass1"
+            android:layout_marginTop="65dp"
+            android:onClick="getlocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+    
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="77dp"
+            android:layout_marginTop="50dp"
+            android:text="Driver"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="#000"
+            app:layout_constraintTop_toBottomOf="@+id/imgv1" />
+    
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="77dp"
+            android:layout_marginTop="54dp"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:text="Passenger"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView1" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="273dp"
-        android:layout_height="172dp"
-        android:layout_alignBottom="@id/imageView1"
-        android:layout_marginStart="69dp"
-        android:src="@drawable/pass1"
-        android:layout_marginTop="65dp"
-        android:onClick="getlocation"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="77dp"
-        android:layout_marginTop="50dp"
-        android:text="Driver"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="#000"
-        app:layout_constraintTop_toBottomOf="@+id/imgv1" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="77dp"
-        android:layout_marginTop="54dp"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:textColor="#000"
-        android:text="Passenger"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView1" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="77dp"
+            android:layout_marginTop="54dp"
+            android:text="Admin"
+            android:textColor="#000"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        <ImageView
+            android:layout_width="273dp"
+            android:layout_height="172dp"
+            android:id="@+id/imageView3"
+            android:layout_alignBottom="@id/imageView2"
+            android:layout_marginStart="69dp"
+            android:src="@drawable/admin1"
+            android:onClick="administrator"
+            android:layout_marginTop="65dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>    
